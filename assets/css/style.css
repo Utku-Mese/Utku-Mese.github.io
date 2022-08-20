@@ -275,7 +275,7 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
+  width: 105%;
   height: 100vh;
   background: url("../img/mee.jpg") top right no-repeat;
   background-size: cover;
