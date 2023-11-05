@@ -16,7 +16,6 @@ function AboutCard() {
             Additionally, I am currently employed as a software developer at
             Önersene.
             <br />
-            asd
             <br />
             <br />
             Apart from coding, some other activities that I love to do!

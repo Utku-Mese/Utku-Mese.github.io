@@ -6,6 +6,7 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
+import Adventure from "./Adventure";
 
 function About() {
   return (
@@ -34,6 +35,13 @@ function About() {
             <img src={laptopImg} alt="about" className="img-fluid" />
           </Col>
         </Row>
+
+        <h1 className="project-heading">
+          My Software <strong className="purple">Adventure </strong>
+        </h1>
+        <br />
+        <Adventure />
+        <br />
         <h1 className="project-heading">
           Professional <strong className="purple">Skillset </strong>
         </h1>
