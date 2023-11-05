@@ -6,6 +6,7 @@ import {
   AiFillGithub,
   AiOutlineTwitter,
   AiFillInstagram,
+  AiOutlineYoutube,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
@@ -19,37 +20,39 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
+              Since I stepped into the world of software, touching code and creating entirely new things with my keyboard has become a passion for me. I enjoy dancing with perplexing errors and solving lines of code, each a puzzle in itself.
               <br />
-              <br />I am fluent in classics like
+              <br />
+              <i><b className="purple">With the philosophy of learning something about everything, everything about something</b></i>, I have experienced different fields and am currently interested in mobile development. I'm continuously improving myself in software processes, striving to be both a good developer and a proficient engineer.
+              <br />
+              <br />
+              I'm a tech-savvy software engineer. I continuously push my boundaries with the possibilities brought by the digital age. Navigating the magical world of ones and zeros, I take pleasure in sipping my coffee while pondering over a new project. Bringing my thoughts and dreams to reality by assembling code is a passion for me. If we share the same passions, I'm excited to collaborate!
+              <br />
+              <br />
+              <br />
+              My field of Interest's are
+              {" "}
               <i>
-                <b className="purple"> C++, Javascript and Go. </b>
-              </i>
-              <br />
-              <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
+                <b className="purple">Mobile development </b> and
+                also to{" "}
                 <b className="purple">
-                  Blockchain.
+                  Back-End{" "}
+                </b>
+                and{" "}
+                <b className="purple">
+                  Machine learning.
                 </b>
               </i>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Next.js</b>
-              </i>
+              Whenever possible, I also apply my passion for developing products with <b className="purple">Node.js</b> and
+
+              <b className="purple">
+                {" "}
+                Express.js
+                {" "}
+              </b>
+              Frameworks
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -67,7 +70,7 @@ function Home2() {
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/soumyajit4419"
+                  href="https://github.com/Utku-Mese"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -77,17 +80,17 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/Soumyajit4419"
+                  href="https://youtube.com/@mehmetutkumese?si=bnXmicbBrM58Kjm0"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <AiOutlineTwitter />
+                  <AiOutlineYoutube />
                 </a>
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/soumyajit4419/"
+                  href="https://www.linkedin.com/in/mehmet-utku-mese/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -97,7 +100,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/soumyajit4419"
+                  href="https://www.instagram.com/utku_mese/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
