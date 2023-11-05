@@ -17,6 +17,10 @@ function AboutCard() {
             Önersene.
             <br />
             <br />
+            I am a hard-working person who is always willing to learn new things and improve myself.
+            <br />
+            <br />
+            <br />
             <br />
             Apart from coding, some other activities that I love to do!
           </p>
@@ -41,11 +45,8 @@ function AboutCard() {
             </li>
 
           </ul>
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "I never lose. I either win or learn!"{" "}
-          </p>
-          <footer className="blockquote-footer">Nelson Mandela</footer>
+          <br />
+          <br />
         </blockquote>
       </Card.Body>
     </Card>

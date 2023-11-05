@@ -440,6 +440,7 @@ button:focus {
 
 .blockquote-footer {
   color: #a588c0 !important;
+  font-size: 20px !important;
 }
 /* --------- */
 /* Projects */
@@ -506,7 +507,7 @@ button:focus {
 
 .card-img-top {
   padding: 20px !important;
-  opacity: 0.8 !important;
+  opacity: 1 !important;
   border-radius: 10px !important;
 }
 
