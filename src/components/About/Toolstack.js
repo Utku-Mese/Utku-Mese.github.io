@@ -17,35 +17,35 @@ function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <SiGit />
+      <Col xs={4} md={2} className="tech-icons" title="Git">
+        <SiGit title="Git" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+      <Col xs={4} md={2} className="tech-icons" title="Visual Studio Code">
+        <SiVisualstudiocode title="Visual Studio Code" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiAndroidstudio />
+      <Col xs={4} md={2} className="tech-icons" title="Android Studio">
+        <SiAndroidstudio title="Android Studio" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiUnity />
+      <Col xs={4} md={2} className="tech-icons" title="Unity">
+        <SiUnity title="Unity" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
+      <Col xs={4} md={2} className="tech-icons" title="Postman">
+        <SiPostman title="Postman" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiLinux />
+      <Col xs={4} md={2} className="tech-icons" title="Postman">
+        <SiLinux title="Postman" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiTrello />
+      <Col xs={4} md={2} className="tech-icons" title="Trello">
+        <SiTrello title="Trello" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiJira />
+      <Col xs={4} md={2} className="tech-icons" title="Jira">
+        <SiJira title="Jira" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiAdobephotoshop />
+      <Col xs={4} md={2} className="tech-icons" title="Adobe Photoshop">
+        <SiAdobephotoshop title="Adobe Photoshop" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFigma />
+      <Col xs={4} md={2} className="tech-icons" title="Figma">
+        <SiFigma title="Figma" />
       </Col>
     </Row>
   );

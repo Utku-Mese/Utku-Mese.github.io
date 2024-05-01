@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
   DiNodejs,
@@ -20,56 +19,55 @@ import {
   SiFirebase,
   SiDart,
 } from "react-icons/si";
-import { TbBrandGolang } from "react-icons/tb";
 
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <SiDart />
+      <Col xs={4} md={2} className="tech-icons" title="Dart" >
+        <SiDart title="Dart" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFlutter />
+      <Col xs={4} md={2} className="tech-icons" title="Flutter">
+        <SiFlutter title="Flutter" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiKotlin />
+      <Col xs={4} md={2} className="tech-icons" title="Kotlin">
+        <SiKotlin title="Kotlin" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiCsharp />
+      <Col xs={4} md={2} className="tech-icons" title="C#">
+        <SiCsharp title="C#" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
+      <Col xs={4} md={2} className="tech-icons" title="Python">
+        <DiPython title="Python" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJava />
+      <Col xs={4} md={2} className="tech-icons" title="Java">
+        <DiJava title="Java" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
+      <Col xs={4} md={2} className="tech-icons" title="Javascript">
+        <DiJavascript1 title="Javascript" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiNodejs />
+      <Col xs={4} md={2} className="tech-icons" title="Node.js">
+        <DiNodejs title="Node.js" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiExpress />
+      <Col xs={4} md={2} className="tech-icons" title="Express.js">
+        <SiExpress title="Express.js" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiHtml5 />
+      <Col xs={4} md={2} className="tech-icons" title="Html">
+        <SiHtml5 title="Html" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiCss3 />
+      <Col xs={4} md={2} className="tech-icons" title="Css">
+        <SiCss3 title="Css" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiArduino />
+      <Col xs={4} md={2} className="tech-icons" title="Arduino">
+        <SiArduino title="Arduino" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
+      <Col xs={4} md={2} className="tech-icons" title="Firebase">
+        <SiFirebase title="Firebase" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMicrosoftsqlserver />
+      <Col xs={4} md={2} className="tech-icons" title="Microsoft SQL Server">
+        <SiMicrosoftsqlserver title="Microsoft SQL Server" />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMysql />
+      <Col xs={4} md={2} className="tech-icons" title="MySQL">
+        <SiMysql title="MySQL" />
       </Col>
 
 
