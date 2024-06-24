@@ -8,6 +8,9 @@ import petshop from "../../Assets/Projects/petshop.png";
 import myUni from "../../Assets/Projects/MyUni.png";
 import rollDice from "../../Assets/Projects/rollDice.png";
 import pyImageProssesing from "../../Assets/Projects/pyImageProssesing.png";
+import sospac from "../../Assets/Projects/sospac.png";
+import onersene from "../../Assets/Projects/onersene.png";
+import threatTracker from "../../Assets/Projects/threatTracker.png";
 
 function Projects() {
   return (
@@ -56,12 +59,52 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
+              imgPath={onersene}
+              isBlog={false}
+              title="Önersene(Private)"
+              description="Önersene is a mobile application based in Konya Teknokent that connects tradesmen and artisans with customers. It serves as a platform for finding and hiring local professionals for various services."
+              ghLink="http://onersene.com/?i=1"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={sospac}
+              isBlog={false}
+              title="Sospac"
+              description="A social media app where you can create your own social space and share freely."
+              ghLink="https://github.com/Utku-Mese/Sospac"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
               imgPath={winkToTheFuture}
               isBlog={false}
               title="Wink To The Future"
               description="We misuse and harm the world that is our home. It is a mobile application that provides information about what the world will be like in the future if we continue like this and how we can prevent this situation."
               ghLink="https://github.com/Utku-Mese/WINK-TO-THE-FUTURE-INNOSOFT"
               demoLink="https://youtu.be/xPwoLuFRq8w?si=2D6cnC8nQrYSKa_I"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={threatTracker}
+              isBlog={false}
+              title="ThreatTracker(Private)"
+              description="ThreatTracker allows you to visualize and list cyber attacks around the world with various graphs such as graf on a map."
+              ghLink=""
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              /* imgPath={sospac} */
+              isBlog={false}
+              title="SB Kurye(Private - OnWorking)"
+              description="SB Kurye is a mobile application that provides courier services. It is a project that is still under development."
+              ghLink=""
             />
           </Col>
 
@@ -75,15 +118,7 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              /* imgPath={winkToTheFuture} */
-              isBlog={false}
-              title="Sospac"
-              description=""
-              ghLink="https://github.com/Utku-Mese/Socpac"
-            />
-          </Col>
+
         </Row>
       </Container>
     </Container>
