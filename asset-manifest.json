@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2c16da35.css",
-    "main.js": "/static/js/main.23ea1a60.js",
+    "main.js": "/static/js/main.c31bc159.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/meCircle.png": "/static/media/meCircle.d48bbd79dc545c6c502f.png",
@@ -13,7 +13,7 @@
     "static/media/winkToTheFuture.jpg": "/static/media/winkToTheFuture.3777442fb2f3af32a4f2.jpg",
     "static/media/petshop.png": "/static/media/petshop.9ade7d91231d4f1ecea9.png",
     "static/media/MyUni.png": "/static/media/MyUni.2092735de6818193417f.png",
-    "static/media/cv.pdf": "/static/media/cv.a2485b9d0b17d16fc59b.pdf",
+    "static/media/cv.pdf": "/static/media/cv.8c32a3a40d292a79be41.pdf",
     "static/media/home-main.svg": "/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
     "static/media/rollDice.png": "/static/media/rollDice.ac23c5e2f94d25c4925d.png",
@@ -21,12 +21,12 @@
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/index.html",
     "main.2c16da35.css.map": "/static/css/main.2c16da35.css.map",
-    "main.23ea1a60.js.map": "/static/js/main.23ea1a60.js.map",
+    "main.c31bc159.js.map": "/static/js/main.c31bc159.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c16da35.css",
-    "static/js/main.23ea1a60.js"
+    "static/js/main.c31bc159.js"
   ]
 }
