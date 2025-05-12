@@ -18,12 +18,13 @@ import {
   SiMicrosoftsqlserver,
   SiFirebase,
   SiDart,
+  SiSwift,
+  SiIonic,
 } from "react-icons/si";
 
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-
       <Col xs={4} md={2} className="tech-icons" title="Dart" >
         <SiDart title="Dart" />
       </Col>
@@ -32,6 +33,9 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons" title="Kotlin">
         <SiKotlin title="Kotlin" />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons" title="Swift">
+        <SiSwift title="Swift" />
       </Col>
       <Col xs={4} md={2} className="tech-icons" title="C#">
         <SiCsharp title="C#" />
@@ -69,8 +73,9 @@ function Techstack() {
       <Col xs={4} md={2} className="tech-icons" title="MySQL">
         <SiMysql title="MySQL" />
       </Col>
-
-
+      <Col xs={4} md={2} className="tech-icons" title="Ionic">
+        <SiIonic title="Ionic" />
+      </Col>
     </Row>
   );
 }

@@ -20,39 +20,35 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              Since I stepped into the world of software, touching code and creating entirely new things with my keyboard has become a passion for me. I enjoy dancing with perplexing errors and solving lines of code, each a puzzle in itself.
+              I am a Software Engineer and Mobile App Developer, currently working as a Junior Software Development Specialist at BDH (Bilisim Destek Hizmetleri) under Netaş. I specialize in cross-platform development with Flutter while also developing my skills in native development with Kotlin and Swift.
               <br />
               <br />
-              <i><b className="purple">With the philosophy of learning something about everything, everything about something</b></i>, I have experienced different fields and am currently interested in mobile development. I'm continuously improving myself in software processes, striving to be both a good developer and a proficient engineer.
+              <i><b className="purple">With a strong focus on software architecture and design patterns</b></i>, I implement SOLID principles in my projects and work with MVC/MVVM architectures. My passion for technology and continuous learning drives me to create innovative solutions and advance in my career.
               <br />
               <br />
-              I'm a tech-savvy software engineer. I continuously push my boundaries with the possibilities brought by the digital age. Navigating the magical world of ones and zeros, I take pleasure in sipping my coffee while pondering over a new project. Bringing my thoughts and dreams to reality by assembling code is a passion for me. If we share the same passions, I'm excited to collaborate!
+              I have gained extensive experience in mobile app development through various projects, working with technologies like Flutter, Ionic, GetX, BLoC, and Provider. I've also worked with Zebra devices and implemented solutions using ZPL (Zebra Programming Languages).
               <br />
               <br />
               <br />
-              My field of Interest's are
+              My areas of expertise include
               {" "}
               <i>
-                <b className="purple">Mobile development </b> and
-                also to{" "}
+                <b className="purple">Mobile App Development </b> with focus on{" "}
                 <b className="purple">
-                  Back-End{" "}
+                  Cross-Platform{" "}
                 </b>
                 and{" "}
                 <b className="purple">
-                  Machine learning.
+                  Native Development
                 </b>
               </i>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products with <b className="purple">Node.js</b> and
-
+              I also work with <b className="purple">RESTful APIs</b> and implement{" "}
               <b className="purple">
-                {" "}
-                Express.js
-                {" "}
+                Clean Architecture
               </b>
-              Frameworks
+              {" "}principles in my projects
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -70,7 +66,7 @@ function Home2() {
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="mailto:mutkumese@gmail.com"
+                  href="mailto:utkumese.dev@gmail.com"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"

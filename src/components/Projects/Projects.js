@@ -11,7 +11,10 @@ import pyImageProssesing from "../../Assets/Projects/pyImageProssesing.png";
 import sospac from "../../Assets/Projects/sospac.png";
 import onersene from "../../Assets/Projects/onersene.png";
 import threatTracker from "../../Assets/Projects/threatTracker.png";
-
+import bdh from "../../Assets/Projects/bdh.png";
+import intellium from "../../Assets/Projects/intellium.png";
+import eyfel from "../../Assets/Projects/eyfel.jpeg";
+import passo from "../../Assets/Projects/passo.jpeg";
 function Projects() {
   return (
     <Container fluid className="project-section">
@@ -24,6 +27,46 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={intellium}
+              isBlog={false}
+              title="Portal Intellium Mobile"
+              description="A cross-platform mobile application that adapts the company's internal web-based portal to mobile devices. Successfully published on both Android and iOS platforms. This project strengthened my technical skills as well as team collaboration and project management abilities. Technologies used: Flutter, GetX, REST API, and .NET."
+              ghLink=""
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bdh}
+              isBlog={false}
+              title="Emptor Mobile"
+              description="A comprehensive and modular mobile application developed for field teams to manage work orders, create inventory requests, and track all operational processes in a digital environment. Built with MVC architecture and integrated with a RESTful API backend service. Technologies used: Flutter, Ionic, GetX, REST API, ZPL, and Material Design."
+              ghLink=""
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bdh}
+              isBlog={false}
+              title="BoxCoder"
+              description="A Flutter-based mobile application developed to facilitate bulk barcode printing operations with Zebra printers. Features include Bluetooth connectivity, manual entry, barcode reader, and camera scanning capabilities. Technologies used: Flutter, GetX, ZPL, Mobile Scanner, and SharedPreferences."
+              ghLink=""
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bdh}
+              isBlog={false}
+              title="Cargo Pre-Acceptance Module"
+              description="A Flutter-based mobile application that digitizes delivery processes and facilitates delivery tracking for warehouse staff. Features include creating and printing delivery reports, tracking delivery history, and product sorting operations. Technologies used: Flutter, Bloc, and SQLite."
+              ghLink=""
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={myUni}
@@ -48,14 +91,16 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={petshop}
+              imgPath={passo}
               isBlog={false}
-              title="Petshop Otomation"
-              description="A petshop tracking system and desktop application written using C# and Microsoft Sql Server"
-              ghLink="https://github.com/Utku-Mese/Petshop-Otomation"
-              demoLink="https://youtu.be/H2N8nYuJIKQ?si=sVmiwQyrO8zZqkZ3"
+              title="Passo Mobile App (Contribution)"
+              description="Contributed to the revival and documentation of the legacy Passo mobile application built with React Native.
+Focused on analyzing the existing architecture and structure of the older version of the app. Participated in preparing detailed technical documentation and provided support to the development team, contributing indirectly to the project without being involved in the core implementation."
+              ghLink=""
             />
           </Col>
+
+
 
           <Col md={4} className="project-card">
             <ProjectCard
@@ -100,11 +145,22 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              /* imgPath={sospac} */
+              imgPath={eyfel}
               isBlog={false}
-              title="SB Kurye(Private - OnWorking)"
-              description="SB Kurye is a mobile application that provides courier services. It is a project that is still under development."
+              title="SB Courier & Restaurant(Private - OnWorking)"
+              description="A comprehensive platform that integrates restaurant management and courier services. It streamlines order processing, delivery tracking, and business operations through a single system. Currently in demo phase, the platform is actively used by selected restaurants and couriers. Built with Flutter, GetX, React.js, Node.js, and MongoDB."
               ghLink=""
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={petshop}
+              isBlog={false}
+              title="Petshop Otomation"
+              description="A petshop tracking system and desktop application written using C# and Microsoft Sql Server"
+              ghLink="https://github.com/Utku-Mese/Petshop-Otomation"
+              demoLink="https://youtu.be/H2N8nYuJIKQ?si=sVmiwQyrO8zZqkZ3"
             />
           </Col>
 
@@ -117,6 +173,7 @@ function Projects() {
               ghLink="https://github.com/Utku-Mese/Rool-Dice"
             />
           </Col>
+
 
 
         </Row>
