@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2c16da35.css",
-    "main.js": "/static/js/main.8c0c1e62.js",
+    "main.js": "/static/js/main.20e73cfe.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/meCircle.png": "/static/media/meCircle.d48bbd79dc545c6c502f.png",
@@ -11,8 +11,8 @@
     "static/media/intellium.png": "/static/media/intellium.8f9f124b0107fadd6990.png",
     "static/media/emotion.png": "/static/media/emotion.eabfc16e7a146ab15778.png",
     "static/media/onersene.png": "/static/media/onersene.ad5f2f33a3276d242e25.png",
+    "static/media/cv.pdf": "/static/media/cv.635f424f2889526d9720.pdf",
     "static/media/winkToTheFuture.jpg": "/static/media/winkToTheFuture.3777442fb2f3af32a4f2.jpg",
-    "static/media/cv.pdf": "/static/media/cv.7e2121e07b6af2a75262.pdf",
     "static/media/petshop.png": "/static/media/petshop.9ade7d91231d4f1ecea9.png",
     "static/media/MyUni.png": "/static/media/MyUni.2092735de6818193417f.png",
     "static/media/home-main.svg": "/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
@@ -23,12 +23,12 @@
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/index.html",
     "main.2c16da35.css.map": "/static/css/main.2c16da35.css.map",
-    "main.8c0c1e62.js.map": "/static/js/main.8c0c1e62.js.map",
+    "main.20e73cfe.js.map": "/static/js/main.20e73cfe.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c16da35.css",
-    "static/js/main.8c0c1e62.js"
+    "static/js/main.20e73cfe.js"
   ]
 }
