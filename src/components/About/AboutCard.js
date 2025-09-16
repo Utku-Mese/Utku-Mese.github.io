@@ -10,11 +10,10 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="purple">Mehmet Utku Meşe </span>
             from <span className="purple"> Denizli, Turkey.</span>
-            <br /> I am a third year student pursuing an Fırat University
-            in software engineering.
+            <br /> I am a software engineer with 4 years of experience.
             <br />
             Additionally, I am currently employed as a software developer at
-            Önersene.
+            Netaş/BDH.
             <br />
             <br />
             I am a hard-working person who is always willing to learn new things and improve myself.
@@ -25,9 +24,6 @@ function AboutCard() {
             Apart from coding, some other activities that I love to do!
           </p>
           <ul>
-            <li className="about-activity">
-              <ImPointRight /> Playing Games
-            </li>
             <li className="about-activity">
               <ImPointRight /> Watching Movies and Series
             </li>
