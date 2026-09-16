@@ -1,184 +1,214 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
+import { Col, Container, Row } from "react-bootstrap";
+import {
+  FiArrowUpRight,
+  FiBox,
+  FiBriefcase,
+  FiCompass,
+  FiLayers,
+  FiMonitor,
+  FiTruck,
+} from "react-icons/fi";
+import { useLanguage } from "../../i18n/LanguageContext";
 import Particle from "../Particle";
-import winkToTheFuture from "../../Assets/Projects/winkToTheFuture.jpg";
-import emotion from "../../Assets/Projects/emotion.png";
-import petshop from "../../Assets/Projects/petshop.png";
-import myUni from "../../Assets/Projects/MyUni.png";
-import rollDice from "../../Assets/Projects/rollDice.png";
-import pyImageProssesing from "../../Assets/Projects/pyImageProssesing.png";
-import sospac from "../../Assets/Projects/sospac.png";
-import onersene from "../../Assets/Projects/onersene.png";
-import threatTracker from "../../Assets/Projects/threatTracker.png";
-import bdh from "../../Assets/Projects/bdh.png";
-import intellium from "../../Assets/Projects/intellium.png";
-import eyfel from "../../Assets/Projects/eyfel.jpeg";
-import passo from "../../Assets/Projects/passo.jpeg";
+import ProjectCard from "./ProjectCards";
+
+const copy = {
+  en: {
+    eyebrow: "SELECTED WORK · 2024—2026",
+    title: "Products built for the places people actually use them.",
+    intro: "A curated set of mobile, television and enterprise products. Some are open source; others are commercial systems described at a high level to respect project confidentiality.",
+    technologiesLabel: "technologies",
+    archiveLabel: "MORE EXPLORATIONS",
+    archiveTitle: "University systems, computer vision and early mobile experiments.",
+    archiveButton: "Browse GitHub archive",
+    projects: [
+      {
+        number: "01",
+        title: "Tivibu IPTV",
+        category: "IPTV PLATFORM",
+        year: "2025 — NOW",
+        accent: "mint",
+        icon: <FiMonitor />,
+        description: "Portal features and interaction flows for Türk Telekom’s IPTV platform. My work spans live TV, VOD, EPG, player controls, search, PPV and performance tuning on constrained set-top box hardware.",
+        tags: ["JavaScript", "JSP / Java EE", "HLS / DASH", "DRM", "REST API"],
+        links: [],
+      },
+      {
+        number: "02",
+        title: "Naviscope",
+        category: "OPEN SOURCE",
+        year: "2026",
+        accent: "sky",
+        icon: <FiCompass />,
+        description: "A Flutter mobile dashboard that turns location into an observable system—showing GNSS fix quality, accuracy, satellite signal strength, skyplot geometry and live health metrics.",
+        tags: ["Flutter", "Dart", "GNSS", "CoreLocation", "Native Android"],
+        links: [
+          { label: "GitHub", href: "https://github.com/Utku-Mese/naviscope" },
+          { label: "Case note", href: "https://medium.com/@mutkumese/gnss-ve-konum-servisleri-ger%C3%A7ekte-nas%C4%B1l-%C3%A7al%C4%B1%C5%9F%C4%B1r-7c9ac4ed998b" },
+        ],
+      },
+      {
+        number: "03",
+        title: "Bisevk",
+        category: "LOGISTICS PRODUCT",
+        year: "2025 — NOW",
+        accent: "warm",
+        icon: <FiTruck />,
+        description: "A mobile and web freight marketplace, originally launched as Yükümü Al, that connects load owners with carriers through offers, messaging, notifications, location flows and secure operations.",
+        tags: ["Flutter", "BLoC", "React", "Spring Boot", "MongoDB", "WebSocket"],
+        links: [{ label: "App Store", href: "https://apps.apple.com/fi/app/bisevk/id6751422750" }],
+      },
+      {
+        number: "04",
+        title: "Emptor Mobile",
+        category: "ENTERPRISE MOBILE",
+        year: "2024",
+        accent: "lime",
+        icon: <FiBriefcase />,
+        description: "A modular field-operations application for work orders, inventory requests and end-to-end process tracking. I contributed to modernizing the Ionic product into a maintainable Flutter experience.",
+        tags: ["Flutter", "Ionic", "GetX", "REST API", "ZPL"],
+        links: [],
+      },
+      {
+        number: "05",
+        title: "BoxCoder",
+        category: "INDUSTRIAL TOOLING",
+        year: "2025",
+        accent: "orange",
+        icon: <FiBox />,
+        description: "A bulk barcode-printing application for Zebra printers, supporting Bluetooth connectivity, device scanners, camera input, print configuration and efficient warehouse workflows.",
+        tags: ["Flutter", "GetX", "Bluetooth", "ZPL", "Mobile Scanner"],
+        links: [],
+      },
+      {
+        number: "06",
+        title: "Portal Intellium Mobile",
+        category: "CROSS-PLATFORM",
+        year: "2024",
+        accent: "blue",
+        icon: <FiLayers />,
+        description: "A ground-up mobile adaptation of an internal company portal, delivered on Android and iOS. I handled app architecture, REST integrations and sprint coordination as Scrum Master.",
+        tags: ["Flutter", "GetX", "REST API", ".NET", "Scrum"],
+        links: [],
+      },
+    ],
+  },
+  tr: {
+    eyebrow: "SEÇİLİ PROJELER · 2024—2026",
+    title: "İnsanların gerçekten kullandığı alanlar için geliştirilen ürünler.",
+    intro: "Mobil, televizyon ve kurumsal ürünlerden seçili bir koleksiyon. Bazıları açık kaynak; bazıları ise proje gizliliğini korumak amacıyla genel hatlarıyla anlattığım ticari sistemlerdir.",
+    technologiesLabel: "teknolojileri",
+    archiveLabel: "DİĞER ÇALIŞMALAR",
+    archiveTitle: "Üniversite sistemleri, bilgisayarlı görü ve ilk mobil deneyler.",
+    archiveButton: "GitHub arşivini incele",
+    projects: [
+      {
+        number: "01",
+        title: "Tivibu IPTV",
+        category: "IPTV PLATFORMU",
+        year: "2025 — GÜNÜMÜZ",
+        accent: "mint",
+        icon: <FiMonitor />,
+        description: "Türk Telekom'un IPTV platformu için portal özellikleri ve etkileşim akışları. Canlı TV, VOD, EPG, oynatıcı kontrolleri, arama, PPV ve kısıtlı set-top box donanımlarında performans iyileştirmeleri üzerinde çalışıyorum.",
+        tags: ["JavaScript", "JSP / Java EE", "HLS / DASH", "DRM", "REST API"],
+        links: [],
+      },
+      {
+        number: "02",
+        title: "Naviscope",
+        category: "AÇIK KAYNAK",
+        year: "2026",
+        accent: "sky",
+        icon: <FiCompass />,
+        description: "GNSS fix kalitesi, doğruluk, uydu sinyal gücü, skyplot geometrisi ve canlı sağlık metriklerini göstererek konumu gözlemlenebilir bir sisteme dönüştüren Flutter mobil uygulaması.",
+        tags: ["Flutter", "Dart", "GNSS", "CoreLocation", "Native Android"],
+        links: [
+          { label: "GitHub", href: "https://github.com/Utku-Mese/naviscope" },
+          { label: "Teknik yazı", href: "https://medium.com/@mutkumese/gnss-ve-konum-servisleri-ger%C3%A7ekte-nas%C4%B1l-%C3%A7al%C4%B1%C5%9F%C4%B1r-7c9ac4ed998b" },
+        ],
+      },
+      {
+        number: "03",
+        title: "Bisevk",
+        category: "LOJİSTİK ÜRÜNÜ",
+        year: "2025 — GÜNÜMÜZ",
+        accent: "warm",
+        icon: <FiTruck />,
+        description: "Yükümü Al adıyla hayata geçirilen; yük sahipleriyle nakliyecileri ilanlar, teklifler, mesajlaşma, bildirimler ve konum akışları üzerinden buluşturan mobil ve web tabanlı lojistik pazaryeri.",
+        tags: ["Flutter", "BLoC", "React", "Spring Boot", "MongoDB", "WebSocket"],
+        links: [{ label: "App Store", href: "https://apps.apple.com/fi/app/bisevk/id6751422750" }],
+      },
+      {
+        number: "04",
+        title: "Emptor Mobile",
+        category: "KURUMSAL MOBİL",
+        year: "2024",
+        accent: "lime",
+        icon: <FiBriefcase />,
+        description: "İş emirleri, envanter talepleri ve uçtan uca operasyon takibi için modüler saha uygulaması. Ionic ürününün sürdürülebilir bir Flutter deneyimine modernize edilmesine katkı sağladım.",
+        tags: ["Flutter", "Ionic", "GetX", "REST API", "ZPL"],
+        links: [],
+      },
+      {
+        number: "05",
+        title: "BoxCoder",
+        category: "ENDÜSTRİYEL ARAÇ",
+        year: "2025",
+        accent: "orange",
+        icon: <FiBox />,
+        description: "Zebra yazıcılar için Bluetooth bağlantısı, cihaz barkod okuyucusu, kamera girişi, baskı ayarları ve verimli depo akışları sunan toplu barkod yazdırma uygulaması.",
+        tags: ["Flutter", "GetX", "Bluetooth", "ZPL", "Mobile Scanner"],
+        links: [],
+      },
+      {
+        number: "06",
+        title: "Portal Intellium Mobile",
+        category: "ÇOKLU PLATFORM",
+        year: "2024",
+        accent: "blue",
+        icon: <FiLayers />,
+        description: "Şirket içi web portalının sıfırdan geliştirilen ve Android ile iOS'a sunulan mobil uyarlaması. Uygulama mimarisi, REST entegrasyonları ve Scrum Master olarak sprint koordinasyonunu üstlendim.",
+        tags: ["Flutter", "GetX", "REST API", ".NET", "Scrum"],
+        links: [],
+      },
+    ],
+  },
+};
+
 function Projects() {
+  const { language } = useLanguage();
+  const content = copy[language];
+
   return (
-    <Container fluid className="project-section">
+    <main className="page-shell project-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={intellium}
-              isBlog={false}
-              title="Portal Intellium Mobile"
-              description="A cross-platform mobile application that adapts the company's internal web-based portal to mobile devices. Successfully published on both Android and iOS platforms. This project strengthened my technical skills as well as team collaboration and project management abilities. Technologies used: Flutter, GetX, REST API, and .NET."
-              ghLink=""
-            />
-          </Col>
+        <header className="page-hero">
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h1>{content.title}</h1>
+          <p>{content.intro}</p>
+        </header>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bdh}
-              isBlog={false}
-              title="Emptor Mobile"
-              description="A comprehensive and modular mobile application developed for field teams to manage work orders, create inventory requests, and track all operational processes in a digital environment. Built with MVC architecture and integrated with a RESTful API backend service. Technologies used: Flutter, Ionic, GetX, REST API, ZPL, and Material Design."
-              ghLink=""
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bdh}
-              isBlog={false}
-              title="BoxCoder"
-              description="A Flutter-based mobile application developed to facilitate bulk barcode printing operations with Zebra printers. Features include Bluetooth connectivity, manual entry, barcode reader, and camera scanning capabilities. Technologies used: Flutter, GetX, ZPL, Mobile Scanner, and SharedPreferences."
-              ghLink=""
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bdh}
-              isBlog={false}
-              title="Cargo Pre-Acceptance Module"
-              description="A Flutter-based mobile application that digitizes delivery processes and facilitates delivery tracking for warehouse staff. Features include creating and printing delivery reports, tracking delivery history, and product sorting operations. Technologies used: Flutter, Bloc, and SQLite."
-              ghLink=""
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={myUni}
-              isBlog={false}
-              title="University Info System"
-              description="The University Info System is a application designed to manage and display information related to lessons, students, and instructors within a university. It provides a user-friendly interface and a RestFull API for accessing and manipulating university data. Node.js, Express.js, MySQL and Flutter Technologies were used in the project."
-              ghLink="https://github.com/Utku-Mese/University-Info-System-For-Firat-University"
-              demoLink="https://youtu.be/MtTINIelL4o?si=S_aubze1I0vg2wJU"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={pyImageProssesing}
-              isBlog={false}
-              title="Pc Control With Hand Gastures"
-              description="This is a program that controls the computer by detecting hand movements with Python. Using libraries such as MediaPipe and Selenium, it pulls data from the Internet, detects hand movements in real time and transforms them into various operations. You can perform operations such as automatic mail sending, volume control and ready-made desktop templates. Control your computer with your hand gestures with Python."
-              ghLink="https://github.com/Utku-Mese/pc-control-with-handGestures"
-              demoLink="https://youtu.be/eW-37hoeuZY?si=bNCBRfoqhrR4qatx"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={passo}
-              isBlog={false}
-              title="Passo Mobile App (Contribution)"
-              description="Contributed to the revival and documentation of the legacy Passo mobile application built with React Native.
-Focused on analyzing the existing architecture and structure of the older version of the app. Participated in preparing detailed technical documentation and provided support to the development team, contributing indirectly to the project without being involved in the core implementation."
-              ghLink=""
-            />
-          </Col>
-
-
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={onersene}
-              isBlog={false}
-              title="Önersene(Private)"
-              description="Önersene is a mobile application based in Konya Teknokent that connects tradesmen and artisans with customers. It serves as a platform for finding and hiring local professionals for various services."
-              ghLink="http://onersene.com/?i=1"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={sospac}
-              isBlog={false}
-              title="Sospac"
-              description="A social media app where you can create your own social space and share freely."
-              ghLink="https://github.com/Utku-Mese/Sospac"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={winkToTheFuture}
-              isBlog={false}
-              title="Wink To The Future"
-              description="We misuse and harm the world that is our home. It is a mobile application that provides information about what the world will be like in the future if we continue like this and how we can prevent this situation."
-              ghLink="https://github.com/Utku-Mese/WINK-TO-THE-FUTURE-INNOSOFT"
-              demoLink="https://youtu.be/xPwoLuFRq8w?si=2D6cnC8nQrYSKa_I"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={threatTracker}
-              isBlog={false}
-              title="ThreatTracker(Private)"
-              description="ThreatTracker allows you to visualize and list cyber attacks around the world with various graphs such as graf on a map."
-              ghLink=""
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={eyfel}
-              isBlog={false}
-              title="SB Courier & Restaurant(Private - OnWorking)"
-              description="A comprehensive platform that integrates restaurant management and courier services. It streamlines order processing, delivery tracking, and business operations through a single system. Currently in demo phase, the platform is actively used by selected restaurants and couriers. Built with Flutter, GetX, React.js, Node.js, and MongoDB."
-              ghLink=""
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={petshop}
-              isBlog={false}
-              title="Petshop Otomation"
-              description="A petshop tracking system and desktop application written using C# and Microsoft Sql Server"
-              ghLink="https://github.com/Utku-Mese/Petshop-Otomation"
-              demoLink="https://youtu.be/H2N8nYuJIKQ?si=sVmiwQyrO8zZqkZ3"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={rollDice}
-              isBlog={false}
-              title="Rolling dice app"
-              description="A simple dice rolling application written using Flutter."
-              ghLink="https://github.com/Utku-Mese/Rool-Dice"
-            />
-          </Col>
-
-
-
+        <Row className="project-grid">
+          {content.projects.map((project) => (
+            <Col lg={6} key={project.title}>
+              <ProjectCard {...project} technologiesLabel={content.technologiesLabel} />
+            </Col>
+          ))}
         </Row>
+
+        <div className="project-archive">
+          <div>
+            <p className="eyebrow">{content.archiveLabel}</p>
+            <h2>{content.archiveTitle}</h2>
+          </div>
+          <a href="https://github.com/Utku-Mese?tab=repositories" target="_blank" rel="noreferrer" className="button button-secondary">
+            {content.archiveButton} <FiArrowUpRight aria-hidden="true" />
+          </a>
+        </div>
       </Container>
-    </Container>
+    </main>
   );
 }
 

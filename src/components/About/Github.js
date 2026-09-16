@@ -1,21 +1,29 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
-import { Row } from "react-bootstrap";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 function Github() {
+  const { language } = useLanguage();
+  const content = language === "tr"
+    ? { label: "AÇIK KAYNAK RİTMİ", title: "Üretmenin ve öğrenmenin sürekliliği." }
+    : { label: "OPEN SOURCE RHYTHM", title: "A consistent practice of building and learning." };
+
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-      <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
-        Days I <strong className="purple">Code</strong>
-      </h1>
-      <GitHubCalendar
-        username="Utku-Mese"
-        blockSize={15}
-        blockMargin={5}
-        color="#c084f5"
-        fontSize={16}
-      />
-    </Row>
+    <section className="github-panel" aria-labelledby="github-title">
+      <div>
+        <p className="eyebrow">{content.label}</p>
+        <h2 id="github-title">{content.title}</h2>
+      </div>
+      <div className="github-calendar-wrap">
+        <GitHubCalendar
+          username="Utku-Mese"
+          blockSize={13}
+          blockMargin={5}
+          color="#9af7db"
+          fontSize={13}
+        />
+      </div>
+    </section>
   );
 }
 

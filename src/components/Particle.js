@@ -2,51 +2,34 @@ import React from "react";
 import Particles from "react-tsparticles";
 
 function Particle() {
+  if (process.env.NODE_ENV === "test") {
+    return <div id="tsparticles" aria-hidden="true" />;
+  }
+
   return (
     <Particles
       id="tsparticles"
-      params={{
+      options={{
+        fullScreen: { enable: false },
+        fpsLimit: 45,
         particles: {
-          number: {
-            value: 160,
-            density: {
-              enable: true,
-              value_area: 1500,
-            },
-          },
-          line_linked: {
-            enable: false,
-            opacity: 0.03,
-          },
+          color: { value: "#9af7db" },
+          links: { enable: false },
           move: {
-            direction: "right",
-            speed: 0.05,
+            direction: "top",
+            enable: true,
+            outModes: { default: "out" },
+            random: true,
+            speed: 0.22,
           },
-          size: {
-            value: 1,
+          number: {
+            density: { enable: true, area: 1000 },
+            value: 38,
           },
-          opacity: {
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.05,
-            },
-          },
+          opacity: { value: 0.22 },
+          size: { random: true, value: 1.6 },
         },
-        interactivity: {
-          events: {
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
-          },
-          modes: {
-            push: {
-              particles_nb: 1,
-            },
-          },
-        },
-        retina_detect: true,
+        detectRetina: true,
       }}
     />
   );
