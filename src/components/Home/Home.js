@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiLinkedin, FiMapPin } from "react-icons/fi";
-import myImg from "../../Assets/meCircle.png";
+import portrait from "../../Assets/portrait.webp";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
@@ -52,7 +52,7 @@ function Home() {
   const content = copy[language];
 
   return (
-    <main>
+    <main id="main-content">
       <section className="hero-section" id="home">
         <Particle />
         <div className="hero-glow hero-glow-one" aria-hidden="true" />
@@ -94,10 +94,10 @@ function Home() {
             </div>
           </div>
 
-          <div className="hero-visual" aria-label={content.portraitAlt}>
+          <div className="hero-visual">
             <div className="portrait-frame">
               <div className="portrait-grid" aria-hidden="true" />
-              <img src={myImg} alt="Mehmet Utku Meşe" />
+              <img src={portrait} alt={content.portraitAlt} />
             </div>
             <div className="floating-note current-note">
               <span>{content.now}</span>

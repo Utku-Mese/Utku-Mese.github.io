@@ -18,9 +18,6 @@ export function LanguageProvider({ children }) {
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, language);
     document.documentElement.lang = language;
-    document.title = language === "tr"
-      ? "Mehmet Utku Meşe — Yazılım Mühendisi"
-      : "Mehmet Utku Meşe — Software Engineer";
 
     const description = document.querySelector('meta[name="description"]');
     if (description) {

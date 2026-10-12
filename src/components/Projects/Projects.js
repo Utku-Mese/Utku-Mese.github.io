@@ -163,7 +163,7 @@ const copy = {
         icon: <FiUsers />,
         description: "A local-services platform that helps customers discover, compare and choose tradespeople and artisans for everyday needs.",
         tags: ["Mobile product", "Local services", "Marketplace"],
-        links: [{ label: "Website", href: "http://onersene.com/?i=1" }],
+        links: [{ label: "Website", href: "https://onersene.com/?i=1" }],
       },
       {
         number: "12",
@@ -351,7 +351,7 @@ const copy = {
         icon: <FiUsers />,
         description: "Müşterilerin gündelik ihtiyaçları için esnaf ve zanaatkârları keşfetmesine, karşılaştırmasına ve seçmesine yardımcı olan yerel hizmetler platformu.",
         tags: ["Mobil ürün", "Yerel hizmetler", "Pazaryeri"],
-        links: [{ label: "Web sitesi", href: "http://onersene.com/?i=1" }],
+        links: [{ label: "Web sitesi", href: "https://onersene.com/?i=1" }],
       },
       {
         number: "12",
@@ -406,7 +406,7 @@ function Projects() {
   const content = copy[language];
 
   return (
-    <main className="page-shell project-section">
+    <main id="main-content" className="page-shell project-section">
       <Particle />
       <Container>
         <header className="page-hero">

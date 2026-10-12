@@ -5,7 +5,7 @@ function Pre({ load }) {
     <div id={load ? "preloader" : "preloader-none"} aria-hidden="true">
       <img
         className="preloader-logo"
-        src={`${process.env.PUBLIC_URL}/utku mese logoo.png`}
+        src={`${process.env.PUBLIC_URL}/brand.png`}
         alt=""
       />
     </div>

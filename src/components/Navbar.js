@@ -54,7 +54,7 @@ function NavBar() {
           <span className="brand-logo-frame" aria-hidden="true">
             <img
               className="brand-logo"
-              src={`${process.env.PUBLIC_URL}/utku mese logoo.png`}
+              src={`${process.env.PUBLIC_URL}/brand.png`}
               alt=""
             />
           </span>
@@ -66,7 +66,8 @@ function NavBar() {
 
         <Navbar.Toggle
           aria-controls="portfolio-navigation"
-          aria-label="Toggle navigation"
+          aria-expanded={expanded}
+          label={language === "tr" ? "Menüyü aç veya kapat" : "Open or close the menu"}
           onClick={() => setExpanded((value) => !value)}
         >
           <span />
@@ -86,7 +87,11 @@ function NavBar() {
                 {item.label}
               </Nav.Link>
             ))}
-            <div className="language-switch" aria-label="Language selection">
+            <div
+              className="language-switch"
+              role="group"
+              aria-label={language === "tr" ? "Dil seçimi" : "Language"}
+            >
               <button
                 type="button"
                 className={language === "tr" ? "active" : ""}

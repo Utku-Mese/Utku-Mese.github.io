@@ -1,15 +1,26 @@
 {
-  "short_name": "MuM",
+  "short_name": "Utku Meşe",
   "name": "Mehmet Utku Meşe",
   "icons": [
     {
-      "src": "utku mese logoo.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "brand.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#07100f",
+  "background_color": "#07100f"
 }

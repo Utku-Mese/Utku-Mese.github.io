@@ -19,10 +19,19 @@ function Footer() {
         </div>
         <p>© {year} {content.copyright}</p>
         <div className="footer-links">
-          <a href="mailto:utkumese.dev@gmail.com" aria-label="Email"><FiMail /></a>
-          <a href="https://github.com/Utku-Mese" target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a>
-          <a href="https://www.linkedin.com/in/mehmet-utku-mese/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a>
-          <a href="https://medium.com/@mutkumese" target="_blank" rel="noreferrer" className="footer-writing">{content.writing} <FiArrowUpRight /></a>
+          <a href="mailto:utkumese.dev@gmail.com">
+            <FiMail aria-hidden="true" />
+            <span className="sr-only">Email</span>
+          </a>
+          <a href="https://github.com/Utku-Mese" target="_blank" rel="noreferrer">
+            <FiGithub aria-hidden="true" />
+            <span className="sr-only">GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/mehmet-utku-mese/" target="_blank" rel="noreferrer">
+            <FiLinkedin aria-hidden="true" />
+            <span className="sr-only">LinkedIn</span>
+          </a>
+          <a href="https://medium.com/@mutkumese" target="_blank" rel="noreferrer" className="footer-writing">{content.writing} <FiArrowUpRight aria-hidden="true" /></a>
         </div>
       </Container>
     </footer>

@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { FiAward, FiBookOpen, FiMapPin, FiMic, FiUsers } from "react-icons/fi";
-import myImg from "../../Assets/meCircle.png";
+import avatar from "../../Assets/avatar.webp";
 import bdhLogo from "../../Assets/Companies/bdh.jpg";
-import codifyLogo from "../../Assets/Companies/codify-download.png";
+import codifyLogo from "../../Assets/Companies/codify-download.jpg";
 import intelliumLogo from "../../Assets/Companies/intellium-download.png";
 import netasLogo from "../../Assets/Companies/netas-download.png";
 import onerseneLogo from "../../Assets/Companies/onersene-download.jpeg";
@@ -157,7 +157,7 @@ function About() {
   const content = copy[language];
 
   return (
-    <main className="page-shell about-section">
+    <main id="main-content" className="page-shell about-section">
       <Particle />
       <Container>
         <header className="about-hero">
@@ -168,7 +168,7 @@ function About() {
             <div className="about-location"><FiMapPin aria-hidden="true" /> {content.location}</div>
           </div>
           <div className="about-portrait">
-            <img src={myImg} alt={content.portraitAlt} />
+            <img src={avatar} alt={content.portraitAlt} />
           </div>
         </header>
 

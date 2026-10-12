@@ -7,7 +7,7 @@ import { useLanguage } from "../../i18n/LanguageContext";
 import Particle from "../Particle";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.js`;
 
 function ResumeNew() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -39,7 +39,7 @@ function ResumeNew() {
   const pageWidth = Math.min(width - 40, 860);
 
   return (
-    <main className="page-shell resume-section">
+    <main id="main-content" className="page-shell resume-section">
       <Particle />
       <Container>
         <header className="page-hero resume-hero">

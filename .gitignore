@@ -25,5 +25,8 @@ yarn-error.log*
 
 .eslintcache
 
+# Copied from pdfjs-dist before start/build. Do not commit.
+public/pdf.worker.min.js
+
 Server/node_modules
 Server/config.js
