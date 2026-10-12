@@ -51,7 +51,13 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={() => setExpanded(false)}>
-          <span className="brand-mark" aria-hidden="true">UM</span>
+          <span className="brand-logo-frame" aria-hidden="true">
+            <img
+              className="brand-logo"
+              src={`${process.env.PUBLIC_URL}/utku mese logoo.png`}
+              alt=""
+            />
+          </span>
           <span className="brand-copy">
             <strong>Utku Meşe</strong>
             <small>{content.role}</small>

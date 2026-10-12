@@ -1,7 +1,12 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { FiAward, FiBookOpen, FiMapPin, FiUsers } from "react-icons/fi";
+import { FiAward, FiBookOpen, FiMapPin, FiMic, FiUsers } from "react-icons/fi";
 import myImg from "../../Assets/meCircle.png";
+import bdhLogo from "../../Assets/Companies/bdh.jpg";
+import codifyLogo from "../../Assets/Companies/codify-download.png";
+import intelliumLogo from "../../Assets/Companies/intellium-download.png";
+import netasLogo from "../../Assets/Companies/netas-download.png";
+import onerseneLogo from "../../Assets/Companies/onersene-download.jpeg";
 import { useLanguage } from "../../i18n/LanguageContext";
 import Particle from "../Particle";
 import Github from "./Github";
@@ -19,6 +24,8 @@ const copy = {
       graduate: "Software Engineering graduate",
       communityLabel: "COMMUNITY",
       community: "GDG & WTM Elazığ core team",
+      conferenceLabel: "ON STAGE",
+      conference: "Software engineering conference speaker",
     },
     careerLabel: "CAREER SNAPSHOT",
     careerTitle: "From mobile foundations to multi-screen products.",
@@ -27,19 +34,36 @@ const copy = {
         period: "CURRENT",
         title: "Software Engineer",
         place: "NETAŞ · Ankara",
+        company: { logo: netasLogo, name: "NETAŞ", tone: "netas" },
         copy: "Developing the portal layer of Tivibu IPTV across live TV, VOD, EPG, playback, DRM-backed streaming and set-top box performance.",
+      },
+      {
+        period: "2025 — NOW",
+        title: "Mobile Product Development",
+        place: "Codify",
+        company: { logo: codifyLogo, name: "Codify", tone: "codify" },
+        copy: "Contributing to the product development of Bisevk, a logistics marketplace that helps load owners and carriers complete their work with clear, mobile-first flows.",
       },
       {
         period: "2024 — 2025",
         title: "Mobile Software Development",
         place: "BDH / NETAŞ ecosystem",
+        company: { logo: bdhLogo, name: "BDH", tone: "bdh" },
         copy: "Delivered enterprise Flutter products including Emptor Mobile, BoxCoder and a cargo acceptance workflow for field and warehouse teams.",
       },
       {
         period: "2024",
         title: "Mobile Developer Intern",
         place: "Intellium",
+        company: { logo: intelliumLogo, name: "Intellium", tone: "intellium" },
         copy: "Built a cross-platform internal portal for Android and iOS, integrated REST services and coordinated the team’s sprint rhythm.",
+      },
+      {
+        period: "2023 — 2024",
+        title: "Mobile Developer",
+        place: "Önersene",
+        company: { logo: onerseneLogo, name: "Önersene", tone: "onersene" },
+        copy: "Helped shape a local-services product that makes it easier for customers to discover and select trusted tradespeople and artisans.",
       },
       {
         period: "2021 — 2025",
@@ -69,6 +93,8 @@ const copy = {
       graduate: "Yazılım Mühendisliği mezunu",
       communityLabel: "TOPLULUK",
       community: "GDG & WTM Elazığ çekirdek ekip üyesi",
+      conferenceLabel: "KONFERANS",
+      conference: "Yazılım mühendisliği konferans konuşmacısı",
     },
     careerLabel: "KARİYER ÖZETİ",
     careerTitle: "Mobil temellerden çok ekranlı ürünlere.",
@@ -77,18 +103,35 @@ const copy = {
         period: "GÜNCEL",
         title: "Yazılım Mühendisi",
         place: "NETAŞ · Ankara",
+        company: { logo: netasLogo, name: "NETAŞ", tone: "netas" },
         copy: "Tivibu IPTV'nin portal katmanında canlı TV, VOD, EPG, oynatma, DRM destekli yayın ve set-top box performansı üzerine çalışıyorum.",
+      },
+      {
+        period: "2025 — 2026",
+        title: "Mobil Ürün Geliştirme",
+        place: "Codify",
+        company: { logo: codifyLogo, name: "Codify", tone: "codify" },
+        copy: "Yük sahipleri ile nakliyecilerin yalın ve mobil öncelikli akışlarla işlerini tamamlamasına yardımcı olan Bisevk lojistik pazaryerinin ürün geliştirme sürecine katkı sunuyorum.",
       },
       {
         period: "2024 — 2025",
         title: "Mobil Yazılım Geliştirme",
         place: "BDH / NETAŞ ekosistemi",
+        company: { logo: bdhLogo, name: "BDH", tone: "bdh" },
         copy: "Saha ve depo ekipleri için Emptor Mobile, BoxCoder ve kargo kabul akışı dahil kurumsal Flutter ürünleri geliştirdim.",
+      },
+      {
+        period: "2023 — 2024",
+        title: "Mobil Geliştirici",
+        place: "Önersene",
+        company: { logo: onerseneLogo, name: "Önersene", tone: "onersene" },
+        copy: "Müşterilerin güvenilir esnaf ve zanaatkârları keşfedip seçmesini kolaylaştıran yerel hizmetler ürününün geliştirme sürecine katkı sundum.",
       },
       {
         period: "2024",
         title: "Mobil Geliştirici Stajyeri",
         place: "Intellium",
+        company: { logo: intelliumLogo, name: "Intellium", tone: "intellium" },
         copy: "Android ve iOS için çoklu platform şirket içi portal geliştirdim, REST servislerini entegre ettim ve ekibin sprint sürecini koordine ettim.",
       },
       {
@@ -145,9 +188,14 @@ function About() {
             <span>{content.facts.communityLabel}</span>
             <strong>{content.facts.community}</strong>
           </article>
+          <article>
+            <FiMic aria-hidden="true" />
+            <span>{content.facts.conferenceLabel}</span>
+            <strong>{content.facts.conference}</strong>
+          </article>
         </section>
 
-        <section className="about-block career-block">
+        <section className="about-block career-block" id="career-snapshot">
           <div className="about-block-heading">
             <p className="eyebrow">{content.careerLabel}</p>
             <h2>{content.careerTitle}</h2>
@@ -155,7 +203,14 @@ function About() {
           <div className="career-timeline">
             {content.timeline.map((item) => (
               <article className="timeline-item" key={`${item.period}-${item.title}`}>
-                <span className="timeline-period">{item.period}</span>
+                <div className="timeline-meta">
+                  <span className="timeline-period">{item.period}</span>
+                  {item.company && (
+                    <span className={`company-logo company-logo-${item.company.tone}`}>
+                      <img src={item.company.logo} alt={`${item.company.name} logo`} />
+                    </span>
+                  )}
+                </div>
                 <div>
                   <h3>{item.title}</h3>
                   <strong>{item.place}</strong>

@@ -140,16 +140,12 @@ button:focus-visible {
   pointer-events: none;
 }
 
-.preloader-mark {
-  display: grid;
+.preloader-logo {
   width: 64px;
   height: 64px;
-  place-items: center;
   border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  color: var(--accent);
-  font-family: "DM Mono", monospace;
-  font-size: 0.9rem;
+  border-radius: 18px;
+  object-fit: cover;
   animation: preloaderPulse 1s ease-in-out infinite alternate;
 }
 
@@ -189,17 +185,21 @@ button:focus-visible {
   color: var(--text) !important;
 }
 
-.brand-mark {
+.brand-logo-frame {
   display: grid;
   width: 42px;
   height: 42px;
-  place-items: center;
+  overflow: hidden;
   border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  color: var(--accent);
-  font-family: "DM Mono", monospace;
-  font-size: 0.72rem;
-  letter-spacing: -0.05em;
+  border-radius: 12px;
+  box-shadow: 0 0 0 3px rgba(154, 247, 219, 0.05);
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.45);
 }
 
 .brand-copy {
@@ -602,7 +602,7 @@ button:focus-visible {
   align-items: end;
 }
 
-.split-heading > p {
+.split-heading>p {
   margin: 0;
   color: var(--muted-strong);
   font-size: 1rem;
@@ -692,14 +692,14 @@ button:focus-visible {
 }
 
 .work-number,
-.work-row > div p {
+.work-row>div p {
   color: var(--muted);
   font-family: "DM Mono", monospace;
   font-size: 0.68rem;
   letter-spacing: 0.06em;
 }
 
-.work-row > div p {
+.work-row>div p {
   margin: 0 0 0.35rem;
   color: var(--accent-strong);
   text-transform: uppercase;
@@ -752,7 +752,7 @@ button:focus-visible {
   font-size: clamp(2rem, 3vw, 2.8rem);
 }
 
-.contact-strip > div > p:last-child {
+.contact-strip>div>p:last-child {
   margin: 1rem 0 0;
   color: var(--muted);
 }
@@ -793,7 +793,7 @@ button:focus-visible {
     var(--bg);
 }
 
-.page-shell > .container {
+.page-shell>.container {
   position: relative;
   z-index: 1;
 }
@@ -818,12 +818,17 @@ button:focus-visible {
   line-height: 0.98;
 }
 
-.page-hero > p,
-.resume-hero > div > p:last-child {
+.page-hero>p,
+.resume-hero>div>p:last-child {
   margin: 0;
   color: var(--muted-strong);
   font-size: 1rem;
   line-height: 1.8;
+}
+
+.project-section .page-hero {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2.25rem, 5vw, 5rem);
 }
 
 /* Projects */
@@ -833,7 +838,7 @@ button:focus-visible {
   --bs-gutter-y: 1.2rem;
 }
 
-.project-grid > div {
+.project-grid>div {
   display: flex;
 }
 
@@ -886,11 +891,25 @@ button:focus-visible {
   height: 12rem;
 }
 
-.project-card-visual-sky { background: #9ddff0; }
-.project-card-visual-warm { background: #f3d39c; }
-.project-card-visual-lime { background: #d8ed9f; }
-.project-card-visual-orange { background: #f5b28e; }
-.project-card-visual-blue { background: #aebff4; }
+.project-card-visual-sky {
+  background: #9ddff0;
+}
+
+.project-card-visual-warm {
+  background: #f3d39c;
+}
+
+.project-card-visual-lime {
+  background: #d8ed9f;
+}
+
+.project-card-visual-orange {
+  background: #f5b28e;
+}
+
+.project-card-visual-blue {
+  background: #aebff4;
+}
 
 .project-card-meta {
   position: relative;
@@ -1013,7 +1032,7 @@ button:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 
-.about-hero-copy > p:not(.eyebrow) {
+.about-hero-copy>p:not(.eyebrow) {
   max-width: 760px;
   margin: 1.8rem 0 0;
   color: var(--muted-strong);
@@ -1058,7 +1077,7 @@ button:focus-visible {
 
 .about-facts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 1.4rem 0 0;
 }
@@ -1118,10 +1137,17 @@ button:focus-visible {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: 132px 1fr;
   gap: 1.5rem;
   padding: 1.65rem 0;
   border-bottom: 1px solid var(--line);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
 }
 
 .timeline-period {
@@ -1136,6 +1162,53 @@ button:focus-visible {
   font-size: 1.18rem;
   font-weight: 700;
   letter-spacing: -0.025em;
+}
+
+.company-logo {
+  display: grid;
+  width: 118px;
+  height: 54px;
+  place-items: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+  padding: 0.4rem;
+  border: 1px solid rgba(189, 232, 219, 0.22);
+  border-radius: 0.65rem;
+  background: rgba(154, 247, 219, 0.06);
+}
+
+.company-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.company-logo-codify img {
+  transform: scale(1.15) translateY(-7px);
+}
+
+.company-logo-netas {
+  border-color: rgba(154, 247, 219, 0.3);
+  background: linear-gradient(135deg, #087886, #0aa5af);
+}
+
+.company-logo-bdh {
+  border-color: rgba(10, 164, 173, 0.38);
+  background: #f7fffc;
+}
+
+.company-logo-bdh img {
+  transform: scale(1.05);
+}
+
+.company-logo-onersene img {
+  transform: scale(1.15) translateY(-7px);
+}
+
+.company-logo-intellium {
+  border-color: rgba(157, 223, 240, 0.42);
+  background: #f4f8ff;
 }
 
 .timeline-item strong {
@@ -1212,7 +1285,7 @@ button:focus-visible {
   background: var(--surface);
 }
 
-.github-calendar-wrap > div {
+.github-calendar-wrap>div {
   min-width: 720px;
 }
 
@@ -1221,7 +1294,7 @@ button:focus-visible {
   grid-template-columns: 1fr auto;
 }
 
-.resume-hero > div > p:last-child {
+.resume-hero>div>p:last-child {
   max-width: 650px;
   margin-top: 1.4rem;
 }
@@ -1273,7 +1346,7 @@ button:focus-visible {
   padding-bottom: 2.2rem;
 }
 
-.footer-inner > div:first-child {
+.footer-inner>div:first-child {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -1366,8 +1439,16 @@ button:focus-visible {
     gap: 2.5rem;
   }
 
+  .project-section .page-hero {
+    grid-template-columns: 1fr;
+  }
+
   .capability-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-facts {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .capability-card {
@@ -1400,7 +1481,7 @@ button:focus-visible {
     grid-template-columns: 1fr 1fr;
   }
 
-  .footer-inner > p {
+  .footer-inner>p {
     display: none;
   }
 }
@@ -1560,6 +1641,7 @@ button:focus-visible {
 }
 
 @media (max-width: 470px) {
+
   .hero-actions .button,
   .contact-actions .button {
     width: 100%;
