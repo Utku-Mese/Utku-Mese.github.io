@@ -38,11 +38,11 @@ const copy = {
         copy: "Developing the portal layer of Tivibu IPTV across live TV, VOD, EPG, playback, DRM-backed streaming and set-top box performance.",
       },
       {
-        period: "2025 — NOW",
+        period: "2025 — 2026",
         title: "Mobile Product Development",
         place: "Codify",
         company: { logo: codifyLogo, name: "Codify", tone: "codify" },
-        copy: "Contributing to the product development of Bisevk, a logistics marketplace that helps load owners and carriers complete their work with clear, mobile-first flows.",
+        copy: "Contributed to the product development of Bisevk, a logistics marketplace that helps load owners and carriers complete their work with clear, mobile-first flows.",
       },
       {
         period: "2024 — 2025",
@@ -111,7 +111,7 @@ const copy = {
         title: "Mobil Ürün Geliştirme",
         place: "Codify",
         company: { logo: codifyLogo, name: "Codify", tone: "codify" },
-        copy: "Yük sahipleri ile nakliyecilerin yalın ve mobil öncelikli akışlarla işlerini tamamlamasına yardımcı olan Bisevk lojistik pazaryerinin ürün geliştirme sürecine katkı sunuyorum.",
+        copy: "Yük sahipleri ile nakliyecilerin yalın ve mobil öncelikli akışlarla işlerini tamamlamasına yardımcı olan Bisevk lojistik pazaryerinin ürün geliştirme sürecine katkı sundum.",
       },
       {
         period: "2024 — 2025",
