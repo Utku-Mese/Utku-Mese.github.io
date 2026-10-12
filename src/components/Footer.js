@@ -1,81 +1,40 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiFillInstagram,
-  AiFillMail,
-  AiOutlineYoutube,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { Container } from "react-bootstrap";
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { useLanguage } from "../i18n/LanguageContext";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
+  const { language } = useLanguage();
+  const content = language === "tr"
+    ? { role: "Yazılım mühendisi · Ankara", copyright: "Özenle tasarlandı ve geliştirildi.", writing: "Yazılar" }
+    : { role: "Software engineer · Ankara", copyright: "Designed and built with care.", writing: "Writing" };
+
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Mehmet Utku Meşe</h3>
-        </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} <b className="purple">{"<"} mUm {">"}</b></h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="mailto:utkumese.dev@gmail.com"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillMail />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://github.com/Utku-Mese"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://youtube.com/@mehmetutkumese?si=BkiKoiKnBhboECnv"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiOutlineYoutube />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/mehmet-utku-mese/"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/utku_mese/"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+    <footer className="footer">
+      <Container className="footer-inner">
+        <div>
+          <strong>Mehmet Utku Meşe</strong>
+          <span>{content.role}</span>
+        </div>
+        <p>© {year} {content.copyright}</p>
+        <div className="footer-links">
+          <a href="mailto:utkumese.dev@gmail.com">
+            <FiMail aria-hidden="true" />
+            <span className="sr-only">Email</span>
+          </a>
+          <a href="https://github.com/Utku-Mese" target="_blank" rel="noreferrer">
+            <FiGithub aria-hidden="true" />
+            <span className="sr-only">GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/mehmet-utku-mese/" target="_blank" rel="noreferrer">
+            <FiLinkedin aria-hidden="true" />
+            <span className="sr-only">LinkedIn</span>
+          </a>
+          <a href="https://medium.com/@mutkumese" target="_blank" rel="noreferrer" className="footer-writing">{content.writing} <FiArrowUpRight aria-hidden="true" /></a>
+        </div>
+      </Container>
+    </footer>
   );
 }
 

@@ -1,115 +1,124 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
-import { ImBlog } from "react-icons/im";
-import {
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
+import { Link, NavLink } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
+import { useLanguage } from "../i18n/LanguageContext";
 
-import { CgFileDocument } from "react-icons/cg";
+const copy = {
+  en: {
+    role: "Software engineer",
+    writing: "Writing",
+    navItems: [
+      { to: "/", label: "Home", end: true },
+      { to: "/project", label: "Work" },
+      { to: "/about", label: "About" },
+      { to: "/resume", label: "CV" },
+    ],
+  },
+  tr: {
+    role: "Yazılım mühendisi",
+    writing: "Yazılar",
+    navItems: [
+      { to: "/", label: "Ana Sayfa", end: true },
+      { to: "/project", label: "Projeler" },
+      { to: "/about", label: "Hakkımda" },
+      { to: "/resume", label: "CV" },
+    ],
+  },
+};
 
 function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage } = useLanguage();
+  const content = copy[language];
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
-
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <Navbar
-      expanded={expand}
+      expanded={expanded}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className={`site-nav ${isScrolled ? "is-scrolled" : ""}`}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          {/* <img src={logo} className="img-fluid logo" alt="brand" /> */}
-          <h2><b className="purple">{"<"} mUm {">"}</b></h2>
+        <Navbar.Brand as={Link} to="/" onClick={() => setExpanded(false)}>
+          <span className="brand-logo-frame" aria-hidden="true">
+            <img
+              className="brand-logo"
+              src={`${process.env.PUBLIC_URL}/brand.png`}
+              alt=""
+            />
+          </span>
+          <span className="brand-copy">
+            <strong>Utku Meşe</strong>
+            <small>{content.role}</small>
+          </span>
         </Navbar.Brand>
+
         <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
+          aria-controls="portfolio-navigation"
+          aria-expanded={expanded}
+          label={language === "tr" ? "Menüyü aç veya kapat" : "Open or close the menu"}
+          onClick={() => setExpanded((value) => !value)}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
         </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
 
-            <Nav.Item>
+        <Navbar.Collapse id="portfolio-navigation">
+          <Nav className="ms-auto align-items-md-center">
+            {content.navItems.map((item) => (
               <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
+                as={NavLink}
+                key={item.to}
+                to={item.to}
+                end={item.end}
+                onClick={() => setExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                {item.label}
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
+            ))}
+            <div
+              className="language-switch"
+              role="group"
+              aria-label={language === "tr" ? "Dil seçimi" : "Language"}
+            >
+              <button
+                type="button"
+                className={language === "tr" ? "active" : ""}
+                aria-label="Türkçe"
+                aria-pressed={language === "tr"}
+                onClick={() => setLanguage("tr")}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
+                TR
+              </button>
+              <button
+                type="button"
+                className={language === "en" ? "active" : ""}
+                aria-label="English"
+                aria-pressed={language === "en"}
+                onClick={() => setLanguage("en")}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                href="https://medium.com/@mutkumese"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs (Comming Soon)
-              </Nav.Link>
-            </Nav.Item>
-
-            {/* <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/soumyajit4419/Portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item> */}
-
+                EN
+              </button>
+            </div>
+            <a
+              className="nav-writing-link"
+              href="https://medium.com/@mutkumese"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {content.writing} <FiArrowUpRight aria-hidden="true" />
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Container>

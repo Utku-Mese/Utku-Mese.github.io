@@ -1,42 +1,50 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { CgWebsite, CgYoutube } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import { FiArrowUpRight } from "react-icons/fi";
 
-function ProjectCards(props) {
+function ProjectCard({
+  accent = "mint",
+  category,
+  description,
+  icon,
+  links = [],
+  number,
+  tags = [],
+  technologiesLabel = "technologies",
+  title,
+  year,
+}) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      <div className={`project-card-visual project-card-visual-${accent}`}>
+        <div className="project-card-meta">
+          <span>{category}</span>
+          <span>{year}</span>
+        </div>
+        <span className="project-card-number">{number}</span>
+        <span className="project-card-icon" aria-hidden="true">{icon}</span>
+      </div>
+
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        {props.ghLink && (
-          <Button variant="primary" href={props.ghLink} target="_blank">
-            <BsGithub /> &nbsp;
-            {props.isBlog ? "Video" : "GitHub"}
-          </Button>
-        )}
-        {"\n"}
-        {"\n"}
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{description}</Card.Text>
 
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
+        <ul className="project-tags" aria-label={`${title} ${technologiesLabel}`}>
+          {tags.map((tag) => <li key={tag}>{tag}</li>)}
+        </ul>
 
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgYoutube /> &nbsp;
-            {"Video"}
-          </Button>
+        {links.length > 0 && (
+          <div className="project-links">
+            {links.map((link) => (
+              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                {link.label} <FiArrowUpRight aria-hidden="true" />
+              </a>
+            ))}
+          </div>
         )}
       </Card.Body>
     </Card>
   );
 }
-export default ProjectCards;
+
+export default ProjectCard;

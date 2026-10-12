@@ -1,6 +1,15 @@
 import React from "react";
-function Pre(props) {
-  return <div id={props.load ? "preloader" : "preloader-none"}></div>;
+
+function Pre({ load }) {
+  return (
+    <div id={load ? "preloader" : "preloader-none"} aria-hidden="true">
+      <img
+        className="preloader-logo"
+        src={`${process.env.PUBLIC_URL}/brand.png`}
+        alt=""
+      />
+    </div>
+  );
 }
 
 export default Pre;
